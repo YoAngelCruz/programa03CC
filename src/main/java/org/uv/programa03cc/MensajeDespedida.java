@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Angel
  */
-public class MensajeDespedida extends mensajeAbstracto {
+public class MensajeDespedida extends MensajeAbstracto {
 
     @Override
     public void msg() {

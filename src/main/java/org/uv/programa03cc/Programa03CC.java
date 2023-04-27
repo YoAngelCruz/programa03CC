@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class Programa03CC {
 
     public static void main(String[] args) {
-        mensajeAbstracto ma=null;
+        MensajeAbstracto ma=null;
         
         ma= new MensajeSaludo();
         ma.msg();
@@ -23,7 +23,7 @@ public class Programa03CC {
         ma = new MensajeDespedida();
         ma.msg();
         
-        ma = new mensajeAbstracto() {
+        ma = new MensajeAbstracto() {
             @Override
             public void msg() {
                 Logger.getLogger(Programa03CC.class.getName()).log(Level.INFO, "Otro...");
