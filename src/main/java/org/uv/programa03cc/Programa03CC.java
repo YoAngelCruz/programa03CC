@@ -5,6 +5,9 @@
 
 package org.uv.programa03cc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Angel
@@ -12,37 +15,38 @@ package org.uv.programa03cc;
 public class Programa03CC {
 
     public static void main(String[] args) {
-        //mensajeAbstracto ma=null;
+        mensajeAbstracto ma=null;
         
-        //ma= new MensajeSaludo();
-        //ma.msg();
-        
-        //ma = new MensajeDespedida();
-        //ma.msg();
-        
-        //ma = new mensajeAbstracto() {
-         //   @Override
-          //  public void msg() {
-            //    System.out.println("otro...");
-            //}
-        //};
-        //ma.msg();
-        
-        IMensaje ma = null;
-        
-        ma = new MensajeSaludoI();
+        ma= new MensajeSaludo();
         ma.msg();
         
-        ma = new MensajeDespedidaI();
+        ma = new MensajeDespedida();
         ma.msg();
         
-        //Intancia anonima
-        ma = new IMensaje() {
+        ma = new mensajeAbstracto() {
             @Override
             public void msg() {
-                System.out.println("otro...");            
+                Logger.getLogger(Programa03CC.class.getName()).log(Level.INFO, "Otro...");
+
             }
         };
         ma.msg();
+        
+        IMensaje ms = null;
+        
+        ms = new MensajeSaludoI();
+        ms.msg();
+        
+        ms = new MensajeDespedidaI();
+        ms.msg();
+        
+        //Intancia anonima
+        ms = new IMensaje() {
+            @Override
+            public void msg() {
+                Logger.getLogger(Programa03CC.class.getName()).log(Level.INFO, "Otro...");         
+            }
+        };
+        ms.msg();
     }
 }

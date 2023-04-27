@@ -4,12 +4,16 @@
  */
 package org.uv.programa03cc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Angel
  */
 public class mensajeConcreta {
     public void imprimir(){
-        System.out.println("Hola mundo concreto");
+        Logger.getLogger(mensajeConcreta.class.getName()).log(Level.INFO, "Hola mundo concreto");
+
     }
 }

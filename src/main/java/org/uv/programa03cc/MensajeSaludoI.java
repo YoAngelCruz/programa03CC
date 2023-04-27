@@ -4,6 +4,9 @@
  */
 package org.uv.programa03cc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Angel
@@ -12,7 +15,8 @@ public class MensajeSaludoI implements IMensaje{
 
     @Override
     public void msg() {
-        System.out.println("Hola en interface");    
+        Logger.getLogger(MensajeSaludoI.class.getName()).log(Level.INFO, "Hola en interface");
+
     }
     
 }
